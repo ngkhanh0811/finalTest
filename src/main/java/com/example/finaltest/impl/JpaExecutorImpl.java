@@ -139,9 +139,10 @@ public class JpaExecutorImpl<T> implements JpaExecutors<T> {
             System.err.println(conn);
         }
 
-        PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO employee(fullName, birthDay, address, position, department) VALUE("
-                + fullname +"," + birthDate + "," + address + "," + position + "," + department + ")");
+        PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO employee(fullName, address, birthDay, position, department) VALUE("
+                + "'" + fullname + "'" + "," + "'" + birthDate + "'" + "," + "'" + address + "'" + "," + "'" + position + "'" + "," + "'" + department + "'" + ")");
 
         preparedStatement.executeUpdate();
+        System.out.println(preparedStatement);
     }
 }

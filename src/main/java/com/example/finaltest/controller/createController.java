@@ -26,18 +26,20 @@ public class createController extends HttpServlet {
         view.forward(req, res);
     }
 
-    public void doPost(HttpServletResponse res, HttpServletRequest req) throws IOException, ServletException{
-        String fullname = req.getAttribute("fullName").toString();
-        String address = req.getAttribute("address").toString();
-        String position = req.getAttribute("position").toString();
-        String birthDate = req.getAttribute("birthDate").toString();
-        String department = req.getAttribute("department").toString();
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
+        String fullname = req.getParameter("fullName");
+        String address = req.getParameter("address");
+        String position = req.getParameter("position");
+        String birthDate = req.getParameter("birthDate");
+        String department = req.getParameter("department");
 
         EmployeeImpl employee = new EmployeeImpl();
         try {
             employee.createNew(fullname, address, position, birthDate, department);
+            System.out.println();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        res.sendRedirect(req.getContextPath() + "/employee");
     }
 }

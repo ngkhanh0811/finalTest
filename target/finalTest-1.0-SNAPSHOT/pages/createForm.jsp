@@ -35,7 +35,8 @@
                 <input class="border-solid" type="text" name="position" placeholder="Enter position" required/><br>
                 <label>Department:</label><br>
                 <input class="border-solid" type="text" name="department" placeholder="Enter department" required/><br>
-                <button type="submit">Submit</button><br>
+                <button class="bg-gray" type="submit">Submit</button><br>
+                <button><a href="/finalTest_war_exploded/create">Refresh</a></button>
             </form>
         </div>
     </div>

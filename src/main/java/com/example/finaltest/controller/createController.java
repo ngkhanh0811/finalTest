@@ -16,13 +16,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet(name="createservlet", value = "/create")
 public class createController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
         RequestDispatcher view = req.getRequestDispatcher("/pages/createForm.jsp");
-
         view.forward(req, res);
+    }
+
+    public void doPost(HttpServletResponse res, HttpServletRequest req) throws IOException, ServletException{
+        String fullname = req.getAttribute("fullName").toString();
+        String address = req.getAttribute("address").toString();
+        String position = req.getAttribute("position").toString();
+        String birthDate = req.getAttribute("birthDate").toString();
+        String department = req.getAttribute("department").toString();
+
+        EmployeeImpl employee = new EmployeeImpl();
+        try {
+            employee.createNew(fullname, address, position, birthDate, department);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

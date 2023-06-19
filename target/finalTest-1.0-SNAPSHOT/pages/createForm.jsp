@@ -24,7 +24,7 @@
     </div>
     <div class="container-fluid flex">
         <div class="content-body bg-white m-[20px] w-[100%] mt-[0] mx-[30px]">
-            <form method="post" class="">
+            <form method="post" action="${pageContext.request.contextPath}/create">
                 <label>Full name:</label><br>
                 <input class="border-solid" type="text" name="fullName" placeholder="Enter full name" required/><br>
                 <label>Birth date:</label><br>

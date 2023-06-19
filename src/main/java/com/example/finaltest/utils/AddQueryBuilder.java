@@ -7,4 +7,5 @@ Time: 7:24 PM
 ProjectName: finalTest*/
 
 public class AddQueryBuilder {
+
 }

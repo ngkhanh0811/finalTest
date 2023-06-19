@@ -11,6 +11,7 @@ import com.example.finaltest.annotation.Column;
 import com.example.finaltest.annotation.Entity;
 import com.example.finaltest.annotation.Id;
 import com.example.finaltest.config.DBConnection;
+import com.example.finaltest.entity.Employee;
 import com.example.finaltest.utils.SelectQueryBuilder;
 import org.apache.commons.lang3.StringUtils;
 
@@ -122,5 +123,25 @@ public class JpaExecutorImpl<T> implements JpaExecutors<T> {
             }
         }
 
+    }
+    public void createNew(String fullname, String birthDate, String position, String address, String department) throws SQLException {
+        Connection conn = null;
+        try {
+            conn = DBConnection.getInstance().getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(conn == null) {
+            // todo: log
+            System.err.println("Connection is null" + conn);
+        } else {
+            System.err.println(conn);
+        }
+
+        PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO employee(fullName, birthDay, address, position, department) VALUE("
+                + fullname +"," + birthDate + "," + address + "," + position + "," + department + ")");
+
+        preparedStatement.executeUpdate();
     }
 }

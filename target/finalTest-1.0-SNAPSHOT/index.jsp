@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>Hello world</h1>
-<a href="/finalTest_war_exploded/employee">Employee</a>
+<a href="/finalTest_war_exploded/create">Create new employee</a>
+<a href="/finalTest_war_exploded/employee">List Employee</a>
 </body>
 </html>

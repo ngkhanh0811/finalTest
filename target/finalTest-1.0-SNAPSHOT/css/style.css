@@ -73,3 +73,7 @@ i {
 .content-heading-breadcrumb ul li .active {
     color: #27a9e3;
 }
+
+input{
+    border-bottom: 1px solid black;
+}

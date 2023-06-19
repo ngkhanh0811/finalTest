@@ -24,13 +24,18 @@
     </div>
     <div class="container-fluid flex">
         <div class="content-body bg-white m-[20px] w-[100%] mt-[0] mx-[30px]">
-            <form method="post">
-                <input name="fullName" />
-                <input name="birthDate" />
-                <input name="address" />
-                <input name="position" />
-                <input name="department" />
-                <button type="submit">Submit</button>
+            <form method="post" class="">
+                <label>Full name:</label><br>
+                <input class="border-solid" type="text" name="fullName" placeholder="Enter full name" required/><br>
+                <label>Birth date:</label><br>
+                <input class="border-solid" type="date" name="birthDate" placeholder="Enter birth date" required/><br>
+                <label>Address:</label><br>
+                <input class="border-solid" type="text" name="address" placeholder="Enter address" required/><br>
+                <label>Position:</label><br>
+                <input class="border-solid" type="text" name="position" placeholder="Enter position" required/><br>
+                <label>Department:</label><br>
+                <input class="border-solid" type="text" name="department" placeholder="Enter department" required/><br>
+                <button type="submit">Submit</button><br>
             </form>
         </div>
     </div>

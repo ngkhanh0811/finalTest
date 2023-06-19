@@ -22,5 +22,7 @@ import java.util.List;
 public class createController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
         RequestDispatcher view = req.getRequestDispatcher("/pages/createForm.jsp");
+
+        view.forward(req, res);
     }
 }

@@ -21,7 +21,7 @@ import java.util.List;
 @WebServlet(name="employeeservlet", value = "/employee")
 public class empController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        RequestDispatcher view = req.getRequestDispatcher("/pages/employee.jsp");
+        RequestDispatcher view = req.getRequestDispatcher("/pages/list.jsp");
 
         EmployeeImpl employee = new EmployeeImpl();
 

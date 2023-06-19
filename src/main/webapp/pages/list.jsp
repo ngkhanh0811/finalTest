@@ -25,7 +25,7 @@
         <div class="content-body bg-white m-[20px] w-[100%] mt-[0] mx-[30px]">
             <div class="flex flex-columns">
                 <button class="p-[32px]"><a href="/finalTest_war_exploded/employee">Refresh</a></button>
-                <button class="p-[32px]"><a href="/create">Create new employees</a></button>
+                <button class="p-[32px]"><a href="/finalTest_war_exploded/create">Create new employees</a></button>
             </div>
             <table class="m-[20px] mt-[0] w-[97%]">
                 <tr class="text-left pl-[20px] h-[52px]">

@@ -123,45 +123,4 @@ public class JpaExecutorImpl<T> implements JpaExecutors<T> {
         }
 
     }
-    public T getById(String id) {
-        Connection conn = null;
-        try {
-            conn = DBConnection.getInstance().getConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        if(conn == null) {
-            // todo: log
-            System.err.println("Connection is null" + conn);
-        } else {
-            System.err.println(conn);
-        }
-
-        SelectQueryBuilder select = new SelectQueryBuilder(tableName);
-        String idColumnName = null;
-        for (Field f: clazz.getDeclaredFields()){
-            if (f.isAnnotationPresent(Id.class)){
-                idColumnName = f.getAnnotation(Id.class).name();
-            }
-        }
-        select.andClause(idColumnName + " = " + id);
-        System.err.println(select.getQuery());
-
-        String query = select.getQuery();
-        try (Statement statement = conn.createStatement();
-             ResultSet resultSet = statement.executeQuery(query)) {
-
-            //todo: thực hiện query và lấy ra dữ liệu theo id ở đây
-            List<T> result = entityParser(resultSet);
-//            System.out.println(result.get(0));
-            if(!result.isEmpty()){
-//                System.out.println(result.get(0));
-                return result.get(0);
-            }
-            return null;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

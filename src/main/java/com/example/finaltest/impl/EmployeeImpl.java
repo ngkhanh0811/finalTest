@@ -24,7 +24,6 @@ public class EmployeeImpl extends JpaExecutorImpl<Employee>{
         List<Employee> employeeList = obj.findall();
         System.err.println(employeeList);
 
-        obj.getById("1");
         System.err.println(obj);
     }
 }

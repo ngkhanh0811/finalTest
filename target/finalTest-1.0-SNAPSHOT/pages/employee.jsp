@@ -33,7 +33,7 @@
                 </tr>
                 <c:forEach var="item" items="${employees}">
                     <tr>
-<%--                        <td>${item.id}</td>--%>
+                        <td>${item.id}</td>
                         <td>${item.fullName}</td>
                         <td>${item.birthDay}</td>
                         <td>${item.address}</td>
@@ -41,7 +41,7 @@
                         <td>${item.department}</td>
                         <td>
                             <ul class="flex gap-[20px] items-center">
-                                <li><button><a href="/jpa_sem4_war_exploded/product?id=${item.id}">Details</a></button></li>
+                                <li><button><a href="#">Details</a></button></li>
                                 <li><button><a href="#">Edit</a></button></li>
                                 <li><button><a href="#">Delete</a></button></li>
                             </ul>

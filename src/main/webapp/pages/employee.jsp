@@ -26,14 +26,16 @@
             <table class="m-[20px] mt-[0] w-[97%]">
                 <tr class="text-left pl-[20px] h-[52px]">
                     <th class="w-[40px] font-normal">ID</th>
-                    <th class="text-left w-[300px] font-normal">Product name</th>
-                    <th class="w-[200px] font-normal">Import date</th>
-                    <th class="w-[200px] font-normal">Quantity</th>
+                    <th class="text-left w-[300px] font-normal">Full Name</th>
+                    <th class="w-[200px] font-normal">Birth Date</th>
+                    <th class="w-[200px] font-normal">Address</th>
+                    <th class="w-[300px] font-normal">Position</th>
+                    <th class="w-[300px] font-normal">Department</th>
                     <th class="w-[300px] font-normal">Action</th>
                 </tr>
                 <c:forEach var="item" items="${employees}">
                     <tr>
-<%--                        <td>${item.id}</td>--%>
+                        <td>${item.id}</td>
                         <td>${item.fullName}</td>
                         <td>${item.birthDay}</td>
                         <td>${item.address}</td>
@@ -41,7 +43,7 @@
                         <td>${item.department}</td>
                         <td>
                             <ul class="flex gap-[20px] items-center">
-                                <li><button><a href="/jpa_sem4_war_exploded/product?id=${item.id}">Details</a></button></li>
+                                <li><button><a href="#">Details</a></button></li>
                                 <li><button><a href="#">Edit</a></button></li>
                                 <li><button><a href="#">Delete</a></button></li>
                             </ul>
